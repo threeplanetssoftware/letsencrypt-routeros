@@ -12,5 +12,3 @@ DOMAIN=vpnserver.yourdomain.com
 #SETUP_SERVICES=(WWW API)
 ## Uncomment this to disable StrictHostKeyChecking (default yes)
 #SSH_STRICT_KEY_CHECKING=no
-## Uncomment this to specify PubkeyAcceptedAlgorithms (default ssh-rsa,ssh-dsa)
-#SSH_ACCEPTED_ALGORITHMS=ssh-dsa

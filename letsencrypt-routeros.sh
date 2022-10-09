@@ -47,10 +47,10 @@ echo "  Using certificate ${CERTIFICATE}"
 echo "  User private key ${KEY}"
 
 #Create alias for RouterOS command
-routeros="ssh -o PubkeyAcceptedAlgorithms=${SSH_ACCEPTED_ALGORITHMS:-ssh-dss,ssh-rsa} -o StrictHostKeyChecking=${SSH_STRICT_KEY_CHECKING:-yes} -i ${ROUTEROS_PRIVATE_KEY} ${ROUTEROS_USER}@${ROUTEROS_HOST} -p ${ROUTEROS_SSH_PORT}"
+routeros="ssh -o PubkeyAcceptedKeyTypes=+ssh-dss -o StrictHostKeyChecking=${SSH_STRICT_KEY_CHECKING:-yes} -i ${ROUTEROS_PRIVATE_KEY} ${ROUTEROS_USER}@${ROUTEROS_HOST} -p ${ROUTEROS_SSH_PORT}"
 
 #Create alias for scp command
-scp="scp -q -o PubkeyAcceptedAlgorithms=${SSH_ACCEPTED_ALGORITHMS:-ssh-dss,ssh-rsa} -o StrictHostKeyChecking=${SSH_STRICT_KEY_CHECKING:-yes} -P ${ROUTEROS_SSH_PORT} -i ${ROUTEROS_PRIVATE_KEY}"
+scp="scp -q -o PubkeyAcceptedKeyTypes=+ssh-dss -o StrictHostKeyChecking=${SSH_STRICT_KEY_CHECKING:-yes} -P ${ROUTEROS_SSH_PORT} -i ${ROUTEROS_PRIVATE_KEY}"
 
 echo ""
 echo "Checking connection to RouterOS"

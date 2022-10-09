@@ -43,7 +43,6 @@ vim /opt/letsencrypt-routeros/letsencrypt-routeros.settings
 | DOMAIN | mydomain.com | Use main domain for wildcard certificate or subdomain for subdomain certificate |
 | SETUP_SERVICES | (SSTP WWW API) | Array of services for which certificate will be installed |
 | SSH_STRICT_KEY_CHECKING | yes | Allows to override SSH option StrictHostKeyChecking |
-| SSH_ACCEPTED_ALGORITHMS | ssh-rsa,ssh-dsa | Allows to override SSH option PubkeyAcceptedAlgorithms |
 
 
 Change permissions:
