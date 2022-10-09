@@ -41,6 +41,9 @@ vim /opt/letsencrypt-routeros/letsencrypt-routeros.settings
 | ROUTEROS_SSH_PORT | 22 | RouterOS\Mikrotik PORT |
 | ROUTEROS_PRIVATE_KEY | /opt/letsencrypt-routeros/id_rsa | Private RSA Key to connecto to RouterOS |
 | DOMAIN | mydomain.com | Use main domain for wildcard certificate or subdomain for subdomain certificate |
+| SETUP_SERVICES | (SSTP WWW API) | Array of services for which certificate will be installed |
+| SSH_STRICT_KEY_CHECKING | yes | Allows to override SSH option StrictHostKeyChecking |
+| SSH_ACCEPTED_ALGORITHMS | ssh-rsa,ssh-dsa | Allows to override SSH option PubkeyAcceptedAlgorithms |
 
 
 Change permissions:
@@ -98,12 +101,12 @@ certbot certonly --preferred-challenges=dns --manual -d $DOMAIN --manual-public-
 ### Usage of the script
 *To use settings from the settings file:*
 ```sh
-./opt/letsencrypt-routeros/letsencrypt-routeros.sh
+/opt/letsencrypt-routeros/letsencrypt-routeros.sh -c letsencrypt-routeros.settings
 ```
 *To use script without settings file:*
 
 ```sh
-./opt/letsencrypt-routeros/letsencrypt-routeros.sh [RouterOS User] [RouterOS Host] [SSH Port] [SSH Private Key] [Domain]
+/opt/letsencrypt-routeros/letsencrypt-routeros.sh -u [RouterOS User] -h [RouterOS Host] -p [SSH Port] -k [SSH Private Key] -d [Domain]
 ```
 *To use script with CertBot hooks for wildcard domain:*
 ```sh
