@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts 'u:h:p:k:d:c:' OPTION; do
+while getopts 'u:h:p:k:d:f:' OPTION; do
 	case "$OPTION" in
 	u)
 		ROUTEROS_USER=$OPTARG
@@ -17,7 +17,7 @@ while getopts 'u:h:p:k:d:c:' OPTION; do
 	d)
 		DOMAIN=$OPTARG
 		;;
-	c)
+	f)
 		CONFIG=$OPTARG
 		;;
 	*)
@@ -138,7 +138,7 @@ if [[ "${SETUP_SERVICES[*]:-WWW}" =~ "WWW" ]]; then
 	$routeros /ip service set www-ssl certificate="$DOMAIN_INSTALLED_CERT_FILE"
 fi
 
-# Setup Certificat to API Service
+# Setup Certificate to API Service
 if [[ "${SETUP_SERVICES[*]:-API}" =~ "API" ]]; then
 	echo "Updating API SSL Server to use $DOMAIN_INSTALLED_CERT_FILE"
 	$routeros /ip service set api-ssl certificate="$DOMAIN_INSTALLED_CERT_FILE"
