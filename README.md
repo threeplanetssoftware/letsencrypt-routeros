@@ -39,7 +39,7 @@ vim /opt/letsencrypt-routeros/letsencrypt-routeros.settings
 | ROUTEROS_USER | admin | user with admin rights to connect to RouterOS |
 | ROUTEROS_HOST | 10.0.254.254 | RouterOS\Mikrotik IP |
 | ROUTEROS_SSH_PORT | 22 | RouterOS\Mikrotik PORT |
-| ROUTEROS_PRIVATE_KEY | /opt/letsencrypt-routeros/id_rsa | Private RSA Key to connecto to RouterOS |
+| ROUTEROS_PRIVATE_KEY | /opt/letsencrypt-routeros/id_rsa | Private RSA Key to connect to RouterOS |
 | DOMAIN | mydomain.com | Use main domain for wildcard certificate or subdomain for subdomain certificate |
 | SETUP_SERVICES | (SSTP WWW API) | Array of services for which certificate will be installed |
 | SSH_STRICT_KEY_CHECKING | yes | Allows to override SSH option StrictHostKeyChecking |
@@ -117,7 +117,7 @@ certbot certonly --preferred-challenges=dns --manual -d $DOMAIN --manual-public-
 ```
 
 ---
-### Licence MIT
+### License MIT
 Copyright 2018 Konstantin Gimpel
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
