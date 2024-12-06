@@ -7,3 +7,8 @@ ROUTEROS_HOST=10.0.254.254
 ROUTEROS_SSH_PORT=22
 ROUTEROS_PRIVATE_KEY=/opt/letsencrypt-routeros/id_rsa
 DOMAIN=vpnserver.yourdomain.com
+## Uncomment this to specify array of services that will be setup
+## If not specified certificate is installed to (SSTP WWW API)
+#SETUP_SERVICES=(WWW API)
+## Uncomment this to disable StrictHostKeyChecking (default yes)
+#SSH_STRICT_KEY_CHECKING=no
